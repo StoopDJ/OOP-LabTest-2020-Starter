@@ -100,7 +100,7 @@ public class Gantt extends PApplet
 		float textX = X * 3.5f;
 		
 		int Space = 21;
-		float rectH = 40;
+		float rectH = 50;
 
 		Top = height * 0.15f;
 			
