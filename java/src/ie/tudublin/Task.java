@@ -20,7 +20,7 @@ public class Task {
         return StartDate;
     }
 
-    public void setStartDate(){
+    public void setStartDate(int StartDate){
         this.StartDate = StartDate;
     }
 
@@ -28,7 +28,7 @@ public class Task {
         return EndDate;
     }
 
-    public void setEndDate(){
+    public void setEndDate(int EndDate){
         this.EndDate = EndDate;
     }
 

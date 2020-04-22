@@ -11,6 +11,9 @@ import processing.data.TableRow;
 public class Gantt extends PApplet
 {
 	public ArrayList<Task> tasks = new ArrayList<Task>();	
+
+	float rightMargin = 0;
+	float leftMargin = 0;
 	
 	public void settings()
 	{
@@ -95,43 +98,16 @@ public class Gantt extends PApplet
 	
 	public void mousePressed()
 	{
-		float Top;
-		float box = 40;
-
-		float textX = X * 3.5f;
-		
-		int Space = 21;
-		float rectH = 50;
-
-		Top = height * 0.15f;
-			
-		for(int i = 0; i < tasks.size(); i++)
-        {
-			Task task = tasks.get(i);
-
-			float left = map(task.getStartDate(), 1, 30, textX, textX + (29 * Space));
-			float right = map(task.getEndDate(), 1, 30, textX, textX + (29 * Space));
-			
-
-            if(mouseX > left && mouseX < left + box && mouseY > Top - (rectH / 2) && mouseY < Top + (rectH/2))
-            {
-                println("Mouse Pressed");	
-			}
-			else if(mouseX > right - box && mouseX < right && mouseY > Top - (rectH / 2) && mouseY < Top + (rectH / 2))
-			{
-				println("Mouse Pressed");
-			}
-		
-			Top += Space;
-        }
+    
 	}
 
 	public void mouseDragged()
 	{
 	
 		//println("Mouse dragged");	
-	
+
 	}
+
 
 	
 	
@@ -141,6 +117,9 @@ public class Gantt extends PApplet
 		printTasks();
 
 		colorMode(HSB);
+
+		rightMargin = width * 0.15f;
+		leftMargin = width - (width * 0.05f);
 	}
 	
 	public void draw()
