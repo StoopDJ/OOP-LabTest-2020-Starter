@@ -44,13 +44,13 @@ public class Gantt extends PApplet
 	public void displayTasks(){
 		float X = width * 0.05f;
 		float margin = width / 16;
-		float y;
+		float y ;
 		float rectH = 40;
 		float rectS, rectE, rectW;
 		float color;
 		float leftBorder = width / 6;
 		float textX = X * 3.5f;
-		float textY = height * 0.08f;
+		float textY = height * 0.1f;
 		int textSpace = 21;
 	
 		//Tasks
@@ -58,7 +58,7 @@ public class Gantt extends PApplet
 		{
 			fill(255);
 			y = map(i, 0, tasks.size(), 2 * margin, height - margin);
-			text(tasks.get(i).getTasks(), margin, y);
+			text(tasks.get(i).getTasks(), margin * 2, y);
 
 			// drawing rects for each tasks
 
@@ -71,7 +71,7 @@ public class Gantt extends PApplet
 				rectS = map(tasks.get(i).getStartDate(), 1, 30, leftBorder, width - margin);
 				rectE = map(tasks.get(i).getEndDate(), 1, 30, leftBorder, width - margin);
 				rectW = rectE - rectS;
-				rect(rectS, y - rectH / 2, rectW, rectH);
+				rect(rectS , y - rectH / 2, rectW, rectH);
 		}
 		
 
@@ -89,7 +89,7 @@ public class Gantt extends PApplet
 				stroke(120);
 			}
 			line(textX, textY, textX, height - textY);
-			textAlign(CENTER);
+			textAlign(CENTER, CENTER);
 			text(count, textX, textY - textSpace);
 			textX += textSpace;
 		}
@@ -147,8 +147,6 @@ public class Gantt extends PApplet
 }
 
 
-	
-	
 	public void setup() 
 	{
 		loadTasks();
