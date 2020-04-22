@@ -2,6 +2,7 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
+import javafx.scene.shape.Box;
 import processing.core.PApplet;
 import processing.data.Table;
 import processing.data.TableRow;
@@ -127,9 +128,8 @@ public class Gantt extends PApplet
 
 	public void mouseDragged()
 	{
-		//println("Mouse dragged");
-		
 	
+		//println("Mouse dragged");	
 	
 	}
 
@@ -146,6 +146,7 @@ public class Gantt extends PApplet
 	public void draw()
 	{			
 		background(0);
+	
 
 		displayTasks();
 	}
