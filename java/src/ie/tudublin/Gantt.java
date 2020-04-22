@@ -28,8 +28,7 @@ public class Gantt extends PApplet
 		{
 			Task tk = new Task(row);
 			tasks.add(tk);
-		}
-		
+		}	
 	}
 
 	public void printTasks()
@@ -54,34 +53,25 @@ public class Gantt extends PApplet
 		int textSpace = 21;
 		float r = 4;
 
-	
 		//Tasks
 		for(int i = 0; i < tasks.size(); i++)
 		{
 			fill(255);
 			y = map(i, 0, tasks.size(), 2 * margin, height - margin);
 			text(tasks.get(i).getTasks(), margin * 2, y);
-
 			// drawing rects for each tasks
-
-				//HSB color
-				smooth();
-				noStroke();
-				color = map(i, 0, tasks.size(), 0, 255);
-				fill(color, 255, 255);
-			
-				
-				
-				rectS = map(tasks.get(i).getStartDate(), 1, 30, leftBorder, width - margin);
-				rectE = map(tasks.get(i).getEndDate(), 1, 30, leftBorder, width - margin);
-				rectW = rectE - rectS;
-				rect(rectS, y - rectH / 2, rectW, rectH, r);
+			smooth();
+			noStroke();
+			color = map(i, 0, tasks.size(), 0, 255);
+			fill(color, 255, 255);
+	
+			rectS = map(tasks.get(i).getStartDate(), 1, 30, leftBorder, width - margin);
+			rectE = map(tasks.get(i).getEndDate(), 1, 30, leftBorder, width - margin);
+			rectW = rectE - rectS;
+			rect(rectS, y - rectH / 2, rectW, rectH, r);
 		}
-		
-
 		// lines and numbers
 		fill(255);
-
 		for(int count = 1; count < 31; count++)
 		{
 			if(count % 2 == 0)
@@ -96,8 +86,7 @@ public class Gantt extends PApplet
 			textAlign(CENTER, CENTER);
 			text(count, textX, textY - textSpace);
 			textX += textSpace;
-		}
-		
+		}	
 	}		
 	
 	public void mousePressed()
@@ -124,12 +113,12 @@ public class Gantt extends PApplet
 		{
 			if(t.getStartDate() > 1 && mouseX < rectStart - 10)
 			{
-					t.setStartDate(t.getStartDate() - 1);
+				t.setStartDate(t.getStartDate() - 1);
 			}
 			if(t.getStartDate() < 30 && mouseX > rectStart + 10)
 			{
 				if(t.getStartDate() != (t.getEndDate() - 1))
-					t.setStartDate(t.getStartDate() + 1);
+				t.setStartDate(t.getStartDate() + 1);
 			}
 
 		}
@@ -138,7 +127,7 @@ public class Gantt extends PApplet
 			if(t.getEndDate() > 1 && mouseX < rectEnd - 10)
 			{
 				if(t.getStartDate() != (t.getEndDate() - 1))
-					t.setEndDate(t.getEndDate() - 1);
+				t.setEndDate(t.getEndDate() - 1);
 			}
 			if(t.getEndDate() < 30 && mouseX > rectEnd + 10)
 			{
@@ -146,10 +135,8 @@ public class Gantt extends PApplet
 			}
 			
 		}
-
 	}
 }
-
 
 	public void setup() 
 	{

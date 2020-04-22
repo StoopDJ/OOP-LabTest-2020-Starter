@@ -7,7 +7,6 @@ public class Task {
     private int StartDate;
     private int EndDate;
 
-
     public String getTasks(){
         return Tasks;
     }
@@ -45,7 +44,5 @@ public class Task {
     @Override
     public String toString() {
         return "Task [EndDate=" + EndDate + ", StartDate=" + StartDate + ", Tasks=" + Tasks + "]";
-    }
-
-    
+    }  
 }
