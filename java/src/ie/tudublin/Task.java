@@ -32,7 +32,7 @@ public class Task {
         this.EndDate = EndDate;
     }
 
-    public Task (String Tasks, int StartDate, int EndDate){
+    public Task(String Tasks, int StartDate, int EndDate){
         this.Tasks = Tasks;
         this.StartDate = StartDate;
         this.EndDate = EndDate;
