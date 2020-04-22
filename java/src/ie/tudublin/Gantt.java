@@ -116,7 +116,7 @@ public class Gantt extends PApplet
 			rectEnd = map(t.getEndDate(), 1, 30, rightMargin, leftMargin);
 			rectY = map(i, 0, tasks.size(), height * 0.15f, height - height * 0.15f);
 		
-		if(mouseX > rectStart - 20 && mouseX <= rectStart + 20 && mouseY >= (rectY - rectH / 2) && mouseY <= (rectY + rectH * 2))
+		if(mouseX > rectStart - 20 && mouseX <= rectStart + 20 && mouseY >= (rectY - rectH / 2) && mouseY <= (rectY + rectH / 2))
 		{
 			if(t.getStartDate() > 1 && mouseX < rectStart - 10)
 			{
