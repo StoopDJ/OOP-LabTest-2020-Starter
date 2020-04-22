@@ -41,4 +41,11 @@ public class Task {
     public Task(TableRow tr){
         this(tr.getString("Task"), tr.getInt("Start"), tr.getInt("End"));
     }
+
+    @Override
+    public String toString() {
+        return "Task [EndDate=" + EndDate + ", StartDate=" + StartDate + ", Tasks=" + Tasks + "]";
+    }
+
+    
 }
