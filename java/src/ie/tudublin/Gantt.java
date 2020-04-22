@@ -48,10 +48,11 @@ public class Gantt extends PApplet
 		float rectH = 40;
 		float rectS, rectE, rectW;
 		float color;
-		float leftBorder = width / 6;
+		float leftBorder = width / 5.67f;
 		float textX = X * 3.5f;
 		float textY = height * 0.1f;
 		int textSpace = 21;
+		float r = 4;
 	
 		//Tasks
 		for(int i = 0; i < tasks.size(); i++)
@@ -67,11 +68,13 @@ public class Gantt extends PApplet
 				noStroke();
 				color = map(i, 0, tasks.size(), 0, 255);
 				fill(color, 255, 255);
+			
+				
 				
 				rectS = map(tasks.get(i).getStartDate(), 1, 30, leftBorder, width - margin);
 				rectE = map(tasks.get(i).getEndDate(), 1, 30, leftBorder, width - margin);
 				rectW = rectE - rectS;
-				rect(rectS , y - rectH / 2, rectW, rectH);
+				rect(rectS, y - rectH / 2, rectW, rectH, r);
 		}
 		
 
