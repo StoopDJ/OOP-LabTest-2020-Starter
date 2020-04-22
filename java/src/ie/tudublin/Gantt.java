@@ -39,24 +39,25 @@ public class Gantt extends PApplet
 
 	public void displayTasks(){
 		float X = width * 0.05f;
-		float Y = height * 0.16f;
-
-		int Space = 40;
-		
-		for(Task tk : tasks)
+		float margin = width / 20;
+	
+		float y;
+	
+		//Tasks
+		for(int i = 0; i < tasks.size(); i++)
 		{
-			textAlign(LEFT, CENTER);
 			fill(255);
-			stroke(255);
-
-			text(tk.getTasks(),Y,X);
-			Y += Space;
+			y = map(i, 0, tasks.size(), 2 * margin, height - margin);
+			text(tasks.get(i).getTasks(), margin, y);
 		}
+		
 
-		// Vetrtical lines and numbers
+		// lines and numbers
 		float textX = X * 3.5f;
 		float textY = height * 0.08f;
 		int textSpace = 21;
+
+		fill(255);
 
 		
 		for(int count = 1; count < 31; count++)
@@ -67,15 +68,14 @@ public class Gantt extends PApplet
 			}
 			else
 			{
-				stroke(100);
+				stroke(120);
 			}
 			line(textX, textY, textX, height - textY);
-
 			textAlign(CENTER);
 			text(count, textX, textY - textSpace);
-
 			textX += textSpace;
 		}
+	
 	}
 	
 
