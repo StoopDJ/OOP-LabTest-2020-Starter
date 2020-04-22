@@ -39,7 +39,7 @@ public class Gantt extends PApplet
 
 	public void displayTasks(){
 		float X = width * 0.05f;
-		float margin = width / 20;
+		float margin = width / 16;
 		float y;
 		float rectH = 40;
 		float rectS, rectE, rectW;
@@ -118,7 +118,7 @@ public class Gantt extends PApplet
 			}
 			else if(mouseX > right - box && mouseX < right && mouseY > Top - (rectH / 2) && mouseY < Top + (rectH / 2))
 			{
-				println("Mouse Pressed R");
+				println("Mouse Pressed");
 			}
 		
 			Top += Space;
