@@ -109,15 +109,18 @@ public class Gantt extends PApplet
 			Task task = tasks.get(i);
 
 			float left = map(task.getStartDate(), 1, 30, textX, textX + (29 * Space));
+			float right = map(task.getEndDate(), 1, 30, textX, textX + (29 * Space));
 			
 
-            if(mouseX > left && mouseX < left + box && 
-               mouseY > Top - (rectH / 2) && mouseY < Top + (rectH/2))
+            if(mouseX > left && mouseX < left + box && mouseY > Top - (rectH / 2) && mouseY < Top + (rectH/2))
             {
                 println("Mouse Pressed");	
 			}
-			
-
+			else if(mouseX > right - box && mouseX < right && mouseY > Top - (rectH / 2) && mouseY < Top + (rectH / 2))
+			{
+				println("Mouse Pressed R");
+			}
+		
 			Top += Space;
         }
 	}
