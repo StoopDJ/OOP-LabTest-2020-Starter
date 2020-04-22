@@ -127,18 +127,20 @@ public class Gantt extends PApplet
 				if(t.getStartDate() != (t.getEndDate() - 1))
 					t.setStartDate(t.getStartDate() + 1);
 			}
-			if(mouseX > rectEnd - 20 && mouseX <= rectEnd + 20 && mouseY >= (rectY - rectH / 2) && mouseY <= (rectY + rectH / 2))
-			{	
-				if(t.getEndDate() > 1 && mouseX < rectEnd - 10)
-				{
-					if(t.getStartDate() != (t.getEndDate() - 1))
-						t.setEndDate(t.getEndDate() - 1);
-				}
-				if(t.getEndDate() < 30 && mouseX > rectEnd + 10)
-				{
-						t.setEndDate(t.getEndDate() + 1);
-				}
+
+		}
+		if(mouseX > rectEnd - 20 && mouseX <= rectEnd + 20 && mouseY >= (rectY - rectH / 2) && mouseY <= (rectY + rectH / 2))
+		{	
+			if(t.getEndDate() > 1 && mouseX < rectEnd - 10)
+			{
+				if(t.getStartDate() != (t.getEndDate() - 1))
+					t.setEndDate(t.getEndDate() - 1);
 			}
+			if(t.getEndDate() < 30 && mouseX > rectEnd + 10)
+			{
+				t.setEndDate(t.getEndDate() + 1);
+			}
+			
 		}
 
 	}
