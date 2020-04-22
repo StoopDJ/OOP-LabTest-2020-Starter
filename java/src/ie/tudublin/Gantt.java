@@ -94,12 +94,21 @@ public class Gantt extends PApplet
 	
 	public void mousePressed()
 	{
-		println("Mouse pressed");	
+		float Top;
+		//println("Mouse pressed");
+
+		float box = 40;
+
+		Top = height * 0.15f;
+			
 	}
 
 	public void mouseDragged()
 	{
-		println("Mouse dragged");
+		//println("Mouse dragged");
+		
+	
+	
 	}
 
 	
