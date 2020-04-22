@@ -53,6 +53,7 @@ public class Gantt extends PApplet
 		float textY = height * 0.1f;
 		int textSpace = 21;
 		float r = 4;
+
 	
 		//Tasks
 		for(int i = 0; i < tasks.size(); i++)
